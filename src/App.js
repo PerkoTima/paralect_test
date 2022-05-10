@@ -26,7 +26,7 @@ async function fetchUser(userName){
     const userData = await axios.get(`https://api.github.com/users/${userName}`,
     {
       headers: {
-        'Authorization': "token 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",
+//      'Authorization': "token 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",
         'Accept': 'application/vnd.github.v3+json'
       }
     })
@@ -44,7 +44,7 @@ async function fetchRepo(userName, page){
   try{
     const userRepos = await axios.get(`https://api.github.com/users/${userName}/repos`, {
       headers: {
-        'Authorization': "token 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",
+//      'Authorization': "token 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",
         'Accept': 'application/vnd.github.v3+json'
       },
       params: {
