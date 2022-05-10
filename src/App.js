@@ -43,7 +43,8 @@ async function fetchRepo(userName, page){
   try{
     const userRepos = await axios.get(`https://api.github.com/users/${userName}/repos`, {
       headers: {
-        'Authorization': "token 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"
+        'Authorization': "token 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",
+        'withCredentials': true
       },
       params: {
         per_page: 4,
