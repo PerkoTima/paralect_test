@@ -1,3 +1,9 @@
+.loader_container{
+  position: absolute;
+  width: 100%;
+  height: calc(100% - 72px);
+  background-color: #E5E5E5;
+}
 .loader {
     border: 16px solid #f3f3f3;
     border-top: 16px solid #0064EB;
