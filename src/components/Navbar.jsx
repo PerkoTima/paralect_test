@@ -26,7 +26,6 @@ const Navbar = (props) => {
                         name="search"
                         onChange={e => props.setSearchQuery(e.target.value)}
                         className="search"
-                        // ref={props.searchQuery}
                         placeholder="Enter GitHub username"
                     />
                 </form>

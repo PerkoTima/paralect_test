@@ -11,7 +11,6 @@ function App() {
 const [user, setUser] = useState({})
 const [repos, setRepos] = useState([])
 const [searchQuery, setSearchQuery] = useState('')
-// const searchQuery = useRef()
 const [error, setError] = useState(null)
 const [isLoaded, setIsLoaded] = useState(false)
 const [totalPages, setTotalPages] = useState(0)
