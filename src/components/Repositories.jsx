@@ -19,29 +19,29 @@ const Repositories = (props) => {
         {props.repos.length === 0 ?
         <ReposIsEmpty/>
         :   
-        <div className="repositories">
-            <h2>Repositories ({props.user.public_repos})</h2>
-            <div className="repWeapper">
-                {props.repos.map((rep) => 
-                    <RepElement
-                        html_url={rep.html_url}
-                        key={rep.id}
-                        name={rep.name}
-                        description={rep.description}
+            <div className="repositories">
+                <h2>Repositories ({props.user.public_repos})</h2>
+                <div className="repWeapper">
+                    {props.repos.map((rep) => 
+                        <RepElement
+                            html_url={rep.html_url}
+                            key={rep.id}
+                            name={rep.name}
+                            description={rep.description}
+                        />
+                    )}
+                </div>
+                {props.user.public_repos > 4 &&
+                    <Pagination
+                        page={props.page}
+                        totalPages={props.totalPages}
+                        public_repos={props.user.public_repos}
+                        setPage={props.setPage}
+                        fetchRepo={props.fetchRepo}
+                        searchQuery={props.searchQuery}
                     />
-                )}
+                }
             </div>
-            {props.user.public_repos > 4 &&
-                <Pagination
-                    page={props.page}
-                    totalPages={props.totalPages}
-                    public_repos={props.user.public_repos}
-                    setPage={props.setPage}
-                    fetchRepo={props.fetchRepo}
-                    searchQuery={props.searchQuery}
-                />
-            }
-        </div>
         }
     </div>  
     )
