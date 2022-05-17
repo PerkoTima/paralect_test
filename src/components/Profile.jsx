@@ -5,7 +5,9 @@ import Following from "../../src/img/following.svg";
 const Profile = (props) => {
     return(
         <div className="profile">
-            <div className="photo"><img src={props.avatar_url} alt="Profile Avatar"/></div>
+            <div className="photo">
+                <img src={props.avatar_url} alt="Profile Avatar"/>
+            </div>
             <div className="name">{props.name}</div>
             <a className="profileLink" rel="noreferrer" target="_blank" href={props.html_url}>{props.login}</a>
             <div className="follow">

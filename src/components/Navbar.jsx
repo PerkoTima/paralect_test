@@ -8,10 +8,10 @@ const Navbar = (props) => {
         e.preventDefault()
         props.setPage(1)
         if(props.searchQuery){
-          props.fetchUser(props.searchQuery)
-          props.fetchRepo(props.searchQuery)
+            props.fetchUser(props.searchQuery)
+            props.fetchRepo(props.searchQuery)
         }
-      }
+    }
 
     return(
         <div className="navbar">
@@ -20,7 +20,7 @@ const Navbar = (props) => {
             </div>
             <div className="searchBar">
                 <form className="searchForm" onSubmit={searchGit}>
-                    <img className="icon" src={SearchIcon} alt="" />
+                    <img className="icon" src={SearchIcon} alt="Github Icon" />
                     <input 
                         type="search"
                         name="search"
