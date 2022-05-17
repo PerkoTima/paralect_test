@@ -108,7 +108,6 @@
 
 
 .rep{
-  height: 112px;
   padding: 24px 32px;
   background-color: #FFFFFF;
   margin: 24px 0;
@@ -248,7 +247,6 @@
     margin-right: 30px;
   }
   .rep{
-    height: auto;
     padding: 12px 20px;
   }
   .repName{
