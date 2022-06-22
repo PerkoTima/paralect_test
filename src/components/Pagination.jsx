@@ -1,15 +1,15 @@
 import React from "react";
 import ReactPaginate from 'react-paginate';
 
-const Pagination = (props) => {
+const Pagination = (setPage, fetchRepo, searchQuery, page, totalPages, public_repos) => {
     const handlePageClick = (page) => {
-        props.setPage(page.selected + 1);
-        props.fetchRepo(props.searchQuery, page.selected + 1)
+        setPage(page.selected + 1);
+        fetchRepo(searchQuery, page.selected + 1)
     }
     return(
         <div className="paginationWrapper">
             <div className="paginationItems">
-                {props.page * 4 - 3}-{props.page === props.totalPages ? props.public_repos : props.page * 4} of {props.public_repos} items
+                {page * 4 - 3}-{page === totalPages ? public_repos : page * 4} of {public_repos} items
             </div>
             <ReactPaginate
                 breakLabel="..."
@@ -22,10 +22,10 @@ const Pagination = (props) => {
                 previousClassName="prev"
                 nextLinkClassName="page"
                 activeClassName="page_current"
-                pageCount={props.totalPages}
+                pageCount={totalPages}
                 previousLabel="<"
                 className="pagination"
-                forcePage={props.page - 1}
+                forcePage={page - 1}
             />
         </div>
     )

@@ -1,10 +1,10 @@
 import React from "react";
 
-const RepElement = (props) => {
+const RepElement = ({html_url, name, description}) => {
     return(
         <div className="rep">
-            <a className="repName" target="_blank" rel="noreferrer" href={props.html_url}>{props.name}</a>
-            <div className="repDescription">{props.description}</div>
+            <a className="repName" target="_blank" rel="noreferrer" href={html_url}>{name}</a>
+            <div className="repDescription">{description}</div>
         </div>
     )
 }

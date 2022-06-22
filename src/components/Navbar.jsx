@@ -1,15 +1,15 @@
 import React from "react";
 import Logo from "../../src/img/Vector.svg";
-import SearchIcon from "../../src/img/image.svg";
+import SearchIcon from "../../src/img/search_icon.svg";
 
-const Navbar = (props) => {
+const Navbar = ({searchQuery, fetchRepo, fetchUser, setSearchQuery, setPage}) => {
 
     const searchGit = (e) => {
         e.preventDefault()
-        props.setPage(1)
-        if(props.searchQuery){
-            props.fetchUser(props.searchQuery)
-            props.fetchRepo(props.searchQuery)
+        setPage(1)
+        if(searchQuery){
+            fetchUser(searchQuery)
+            fetchRepo(searchQuery)
         }
     }
 
@@ -24,7 +24,7 @@ const Navbar = (props) => {
                     <input 
                         type="search"
                         name="search"
-                        onChange={e => props.setSearchQuery(e.target.value)}
+                        onChange={e => setSearchQuery(e.target.value)}
                         className="search"
                         placeholder="Enter GitHub username"
                     />

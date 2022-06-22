@@ -4,25 +4,25 @@ import Profile from "../components/Profile";
 import ReposIsEmpty from "../components/ReposIsEmpty";
 import Pagination from "./Pagination";
 
-const Repositories = (props) => {
+const Repositories = ({user, repos, page, totalPages, setPage, fetchRepo, searchQuery}) => {
     return(
     <div className="container">
         <Profile
-            avatar_url={props.user.avatar_url}
-            name={props.user.name}
-            html_url={props.user.html_url}
-            login={props.user.login}
-            followers={props.user.followers}
-            following={props.user.following}
+            avatar_url={user.avatar_url}
+            name={user.name}
+            html_url={user.html_url}
+            login={user.login}
+            followers={user.followers}
+            following={user.following}
         />
 
-        {props.repos.length === 0 ?
+        {repos.length === 0 ?
         <ReposIsEmpty/>
         :   
             <div className="repositories">
-                <h2>Repositories ({props.user.public_repos})</h2>
+                <h2>Repositories ({user.public_repos})</h2>
                 <div className="repWeapper">
-                    {props.repos.map((rep) => 
+                    {repos.map((rep) => 
                         <RepElement
                             html_url={rep.html_url}
                             key={rep.id}
@@ -31,14 +31,14 @@ const Repositories = (props) => {
                         />
                     )}
                 </div>
-                {props.user.public_repos > 4 &&
+                {user.public_repos > 4 &&
                     <Pagination
-                        page={props.page}
-                        totalPages={props.totalPages}
-                        public_repos={props.user.public_repos}
-                        setPage={props.setPage}
-                        fetchRepo={props.fetchRepo}
-                        searchQuery={props.searchQuery}
+                        page={page}
+                        totalPages={totalPages}
+                        public_repos={user.public_repos}
+                        setPage={setPage}
+                        fetchRepo={fetchRepo}
+                        searchQuery={searchQuery}
                     />
                 }
             </div>
